@@ -1,4 +1,4 @@
-# Dental-Booking'
+# Dental-Booking
 
 BTL MÔN PT & TK PHẦN MỀM - TRƯỜNG ĐẠI HỌC PHENIKAA
 
@@ -7,6 +7,7 @@ BTL MÔN PT & TK PHẦN MỀM - TRƯỜNG ĐẠI HỌC PHENIKAA
 Giảng viên hướng dẫn: MAI XUÂN TRÁNG
 
 
+# Công nghệ sử dụng
 BackEnd: NodeJS, ExpressJS
 
 FontEnd: ReactJS, HTML, Bootstrap, css, ...
