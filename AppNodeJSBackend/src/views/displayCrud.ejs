@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display get Crud</title>
+
+    <style>
+        table, th, td {
+          border: 1px solid black;
+          border-collapse: collapse;
+        }
+
+        .bt-edit{
+          border: none;
+          outline: none;
+          background-color: orange;
+          width: 55px;
+          height: 30px;
+          border-radius: 5px;
+          cursor: pointer;
+          text-decoration: none;
+          color: #fff;
+        }
+
+        .bt-delete{
+          border: none;
+          outline: none;
+          background-color: red;
+          width: 55px;
+          height: 30px;
+          border-radius: 5px;
+          cursor: pointer;
+          text-decoration: none;
+          color: #fff;
+        }
+
+
+      </style>
+</head>
+<body>
+    <table style="width:100%">
+        <tr>
+            <th>Email</th>
+            <th>Firstname</th>
+            <th>Lastname</th> 
+            <th>Address</th>
+            <th>Phone Number</th>
+            <th>Sex</th>
+            <th>Image</th>
+            <th>role Id</th>
+            <th>position Id</th>
+        </tr>
+            <% for(var i=0; i < dataTable.length; i++) { %>
+               <tr>
+                 <td><%= dataTable[i].email %></td>
+                 <td><%= dataTable[i].firstName %></td>
+                 <td><%= dataTable[i].lastName %></td>
+                 <td><%= dataTable[i].address %></td>
+                 <td><%= dataTable[i].phoneNumber %></td>
+                 <td><%= dataTable[i].gender  %></td>
+                 <td><%= dataTable[i].image %></td>
+                 <td><%= dataTable[i].roleId %></td> 
+                 <td><%= dataTable[i].positionId %></td>
+
+                 <td>
+                    <a href="/edit-crud?id= <%= dataTable[i].id %>" type="button" class="bt-edit">Edit</a>
+                    <a href="/delete-crud?id= <%= dataTable[i].id %>" type="button" class="bt-delete">Delete</a>
+                 </td>
+               </tr>
+            <% } %>
+        
+    </table>
+</body>
+</html>
