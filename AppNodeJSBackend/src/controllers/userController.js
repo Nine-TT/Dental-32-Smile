@@ -5,7 +5,7 @@ let handleLogin = async (req, res) => {
     let password = req.body.password;
 
     if (!email || !password) {
-        return res.status(500).json({
+        return res.status(401).json({
             errCode: 1,
             message: 'Missing email or password!'
         })
