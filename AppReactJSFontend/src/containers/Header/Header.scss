@@ -1,0 +1,77 @@
+@import "../../styles/common.scss";
+
+.header-container {
+  .header-tabs-container {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 14px;
+  }
+
+  // #078d8d
+  z-index: 99;
+  display: flex;
+  justify-content: space-around;
+  background-color: #078d8d;
+  color: $common-text-color;
+  height: 40px;
+  position: relative;
+  .btn-logout {
+    color: $common-text-color;
+    line-height: 40px;
+    height: 40px;
+    padding: 0 10px;
+    &:hover {
+      background-color: chocolate;
+    }
+    i {
+      font-size: $base-size + 1px;
+    }
+  }
+}
+
+.languages {
+  i {
+    margin: auto 10px;
+  }
+  .welcome {
+    margin-right: 10px;
+    font-size: 16px;
+  }
+
+  .language-vi {
+    cursor: pointer;
+    font-weight: bold;
+    opacity: 0.5;
+
+    &.active {
+      opacity: 1;
+      color: rgb(234, 156, 156);
+    }
+  }
+
+  .language-en {
+    margin: 0 10px;
+    cursor: pointer;
+    opacity: 0.5;
+
+    &.active {
+      opacity: 1;
+      color: rgb(234, 156, 156);
+    }
+  }
+}
+
+.logo-company {
+  background-image: url(../../assets/images/logo_v3.png);
+  width: 200px;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.btn-user {
+  margin-top: 2px !important;
+  background-color: #078d8d !important;
+ 
+}

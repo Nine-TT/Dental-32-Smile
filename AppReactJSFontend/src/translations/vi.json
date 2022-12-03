@@ -1,0 +1,60 @@
+{
+   "homeheader": {
+    "Facilities": "Cơ sở",
+    "Choose-a-clinic": "Chọn cơ sở khám",
+    "Dentist": "Nha sĩ",
+    "Choose-your-desired-dentist": "Chọn nha sĩ mong muốn",
+    "Checkup-package": "Gói khám",
+    "Package-offer": "Ưu đãi khám theo gói",
+    "Cosmetic-dentistry": "Nha khoa thẩm mỹ",
+    "Children's-teeth": "Răng trẻ em",
+    "Implant": "Cấy ghép Implant",
+    "Tooth-extraction": "Nhổ răng",
+    "Orthodontic": "Chỉnh nha",
+    "Other-services": "Dịch vụ khác",
+    "Title-dental": "DENTAL 32 SMILE - HỆ THỐNG NHA KHOA 4.0 UY TÍN SỐ 1 VIỆT NAM",
+    "Welcome": "Xin Chào"
+   },
+
+
+    "menu": {
+        "admin": {
+            "manage-user" : "người dùng",
+            "manage-doctor" : "Quản lý bác sĩ",
+            "manage-admin" : "Quản lý Admin",
+            "crud" : "CRUD user",
+            "crud-redux": "Redux user",
+            "clinic": "Phòng khám",
+            "manage-clinic" : "Quản lý phòng khám",
+            "specialty": "Dịch vụ",
+            "manage-specialty": "Quản lý dịch vụ",
+            "handbook": "Bài đăng",
+            "manage-handbook" : "Quản lý bài đăng"
+        },
+
+        "doctor": {
+            "manage-schedule": "Lịch khám"
+        }
+    },
+
+    "manage-user": {
+        "add" : "Tạo người dùng mới",
+        "email": "Email",
+        "password": "Mật khẩu",
+        "firstname": "Họ đệm",
+        "lastname": "Tên",
+        "gender": "Giới tính",
+        "phonenumber" : "Điện thoại",
+        "birthday" : "Ngày tháng năm sinh",
+        "address": "Địa chỉ",
+        "position": "Chức danh",
+        "role": "Vai trò",
+        "image": "Ảnh",
+        "save": "Lưu"
+    },
+
+    "manage-schedule": {
+        "title": "Quản lý lịch khám"
+    }
+    
+}

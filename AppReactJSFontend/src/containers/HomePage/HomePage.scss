@@ -1,0 +1,23 @@
+// reset slick css
+
+.slick-prev {
+  z-index: 1000 !important;
+  font-size: 0px !important;
+  line-height: 0 !important;
+  left: 0 !important;
+  background-color: #0da1a1 !important;
+  height: 50px !important;
+  width: 30px !important;
+  opacity: 0.5 !important;
+}
+
+.slick-next {
+  z-index: 1000 !important;
+  font-size: 0 !important;
+  line-height: 0 !important;
+  right: 0 !important;
+  background-color: #0da1a1 !important;
+  height: 50px !important;
+  width: 30px !important;
+  opacity: 0.5 !important;
+}

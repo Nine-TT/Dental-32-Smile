@@ -1,0 +1,60 @@
+{
+    "homeheader": {
+        "Facilities": "Facilities",
+        "Choose-a-clinic": "Choose a clinic",
+        "Dentist" : "Dentist",
+        "Choose-your-desired-dentist": "Choose your desired dentist",
+        "Checkup-package": "Checkup package",
+        "Package-offer": "Package offer",
+        "Cosmetic-dentistry": "Cosmetic dentistry",
+        "Children's-teeth": "Children's teeth",
+        "Implant": "Implant",
+        "Tooth-extraction": "Tooth extraction",
+        "Orthodontic": "Orthodontic",
+        "Other-services": "Other services",
+        "Title-dental": "DENTAL 32 SMILE - VIETNAM's No.1 PRESTIGE 4.0 DENTAL SYSTEM",
+        "Welcome": "Welcome"
+    },
+
+    "menu": {
+        "admin": {
+            "manage-user" : "Users",
+            "manage-doctor" : "Doctor management",
+            "manage-admin" : "Admin management",
+            "crud" : "CRUD user",
+            "crud-redux": "Redux user",
+            "clinic": "clinic",
+            "manage-clinic" : "Manage clinic",
+            "specialty": "examination service",
+            "manage-specialty": "service management",
+            "handbook": "Post",
+            "manage-handbook" : "Post management"
+        },
+
+        "doctor": {
+            "manage-schedule": "Examination schedule"
+        }
+    },
+
+    "manage-user": {
+        "add" : "Create new user",
+        "email": "Email",
+        "password": "Pass Word",
+        "firstname": "First Name",
+        "lastname": "Last Name",
+        "gender": "Sex",
+        "phonenumber" : "Phone Number",
+        "birthday" : "Birthday",
+        "address": "Address",
+        "position": "Position",
+        "role": "Role",
+        "image": "Image",
+        "save": "Save"
+    },
+
+    "manage-schedule": {
+        "title": "Manage medical appointments"
+    }
+
+
+}

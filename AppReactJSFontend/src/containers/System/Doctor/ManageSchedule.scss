@@ -1,0 +1,19 @@
+.manage-schedule-container {
+  .title-manage {
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(9, 106, 90);
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  .timepicker-container {
+    display: flex;
+    justify-content: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 20px auto;
+    width: 98.5%;
+  }
+}
