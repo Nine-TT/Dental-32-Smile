@@ -57,7 +57,7 @@ class Login extends Component {
         }
       }
 
-      console.log('Error ', error.response);
+     
     }
 
   }
@@ -80,7 +80,7 @@ class Login extends Component {
               <input
                 type="text"
                 className="form-control "
-                placeholder="Username"
+                placeholder="Username / Email"
                 value={this.state.Username}
                 onChange={(event) => { this.handleOnChangeUsername(event) }}
               />

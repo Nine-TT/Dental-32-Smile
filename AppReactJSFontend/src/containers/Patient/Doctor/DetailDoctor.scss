@@ -1,6 +1,4 @@
 .dentist-infor-container {
-  border: 1px solid red;
-
   .detail-dentist {
     width: 85%;
     margin: 40px auto;
@@ -38,5 +36,20 @@
       .dowm {
       }
     }
+  }
+}
+
+.social-fb {
+  display: flex;
+  span {
+    display: block;
+    width: 80px;
+    line-height: 25px;
+    color: #fff;
+    background-color: rgb(23, 121, 201);
+    margin: 10px 10px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 5px;
   }
 }

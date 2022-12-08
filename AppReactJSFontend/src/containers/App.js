@@ -13,6 +13,9 @@ import HomePage from './HomePage/HomePage.js'
 import CustomScrollbars from '../components/CustomScrollbars'
 import DetailDoctor from './Patient/Doctor/DetailDoctor'
 import Doctor from '../routes/Doctor';
+import PageNotFound from './Auth/PageNotFound';
+import CosmeticDentistry from './AllService/CosmeticDentistry';
+import CosmeticTeeth from './AllService/CosmeticTeeth';
 
 
 class App extends Component {
@@ -52,6 +55,9 @@ class App extends Component {
                                     <Route path={'/doctor'} component={userIsAuthenticated(Doctor)} />
                                     <Route path={path.HOMEPAGE} component={HomePage} />
                                     <Route path={path.DETAIL_DOCTOR} component={DetailDoctor} />
+                                    <Route path={path.ERROR_PAGE} component={PageNotFound} />
+                                    <Route path={path.COSMETIC_DENTISTRY} component={CosmeticDentistry} />
+                                    <Route path={path.COSMETIC_TEETH} component={CosmeticTeeth} />
                                 </Switch>
 
                             </CustomScrollbars>

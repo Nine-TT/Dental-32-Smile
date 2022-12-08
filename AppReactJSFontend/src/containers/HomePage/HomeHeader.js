@@ -7,6 +7,7 @@ import { FormattedMessage } from 'react-intl';
 import { LANGUAGES } from '../../utils';
 import { changeLanguageApp } from '../../store/actions'
 import { withRouter } from 'react-router';
+import Dropdown from 'react-bootstrap/Dropdown';
 
 
 class HomeHeader extends Component {
@@ -20,6 +21,22 @@ class HomeHeader extends Component {
         this.props.history.push(`/home`)
     }
 
+    goLogin = () => {
+        this.props.history.push('/login')
+    }
+
+    Page404 = () => {
+        this.props.history.push('/404')
+    }
+
+    CosmeticDentistry = () => {
+        this.props.history.push('/Cosmetic-dentistry')
+    }
+
+    CosmeticTeeth = () => {
+        this.props.history.push('/Cosmetic-teeth')
+    }
+
     render() {
         let language = this.props.lang;
         return (
@@ -27,36 +44,46 @@ class HomeHeader extends Component {
                 <div className='home-header-container'>
                     <div className='home-header-content'>
                         <div className='left-content'>
-                            <i className="fas fa-bars"></i>
+                            <Dropdown className='d-flex align-items-center'>
+                                <Dropdown.Toggle variant="none" id="dropdown-basic" className='d-flex text-light align-items-center'>
+                                    <i className="fas fa-bars"></i>
+                                </Dropdown.Toggle>
+
+                                <Dropdown.Menu >
+                                    <Dropdown.Item onClick={() => this.goLogin()} >Đăng nhập</Dropdown.Item>
+
+                                </Dropdown.Menu>
+                            </Dropdown>
+
                             <div className='header-logo' onClick={() => this.returnToHome()}></div>
                         </div>
 
                         <div className='center-content'>
                             <div className='child-content'>
-                                <div>
+                                <div onClick={() => this.Page404()} className="click-poiter">
                                     <b><FormattedMessage id={"homeheader.Facilities"} /></b>
                                 </div>
-                                <div>
+                                {/* <div>
                                     <FormattedMessage id={"homeheader.Choose-a-clinic"} />
-                                </div>
+                                </div> */}
                             </div>
 
                             <div className='child-content'>
-                                <div>
+                                <div className="click-poiter" onClick={() => this.Page404()}>
                                     <b><FormattedMessage id={"homeheader.Dentist"} /></b>
                                 </div>
-                                <div>
+                                {/* <div>
                                     <FormattedMessage id={"homeheader.Choose-your-desired-dentist"} />
-                                </div>
+                                </div> */}
                             </div>
 
                             <div className='child-content'>
-                                <div>
+                                <div className="click-poiter" onClick={() => this.Page404()}>
                                     <b><FormattedMessage id={"homeheader.Checkup-package"} /></b>
                                 </div>
-                                <div>
+                                {/* <div>
                                     <FormattedMessage id={"homeheader.Package-offer"} />
-                                </div>
+                                </div> */}
                             </div>
                         </div>
 
@@ -65,8 +92,8 @@ class HomeHeader extends Component {
                                 <input className='input-search'></input>
                                 <i className="fas fa-search"></i>
                             </div>
-                            <div className={language === LANGUAGES.VI ? 'language-vi active' : 'language-vi'}><span onClick={() => this.changeLanguage(LANGUAGES.VI)}>VN</span></div>
-                            <div className={language === LANGUAGES.EN ? 'language-en active' : 'language-en'}><span onClick={() => this.changeLanguage(LANGUAGES.EN)}>EN</span></div>
+                            {/* <div className={language === LANGUAGES.VI ? 'language-vi active' : 'language-vi'}><span onClick={() => this.changeLanguage(LANGUAGES.VI)}>VN</span></div>
+                            <div className={language === LANGUAGES.EN ? 'language-en active' : 'language-en'}><span onClick={() => this.changeLanguage(LANGUAGES.EN)}>EN</span></div> */}
                             <div className='hotline'><i className="fas fa-headphones"> Hotline: 0888 686 868</i></div>
                         </div>
                     </div>
@@ -90,14 +117,14 @@ class HomeHeader extends Component {
 
                         <div className='Menu'>
                             <div className='menu-container'>
-                                <div className='option_1'>
+                                <div className='option_1 ' onClick={() => this.CosmeticDentistry()}>
                                     <div className='option-icon'>
                                         <i className="fas fa-user-md"></i>
                                     </div>
                                     <div className='option-title'><FormattedMessage id={"homeheader.Cosmetic-dentistry"} /></div>
                                 </div>
 
-                                <div className='option_1'>
+                                <div className='option_1' onClick={() => this.CosmeticTeeth()}>
                                     <div className='option-icon'>
                                         <i className="fas fa-user-md"></i>
                                     </div>

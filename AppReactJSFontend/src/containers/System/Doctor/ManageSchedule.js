@@ -10,7 +10,7 @@ import DatePicker from '../../../components/Input/DatePicker';
 import moment from 'moment';
 import _ from 'lodash';
 import { toast } from 'react-toastify';
-
+import { saveScheduleDocter } from '../../../services/userService'
 
 
 
@@ -119,14 +119,45 @@ class ManageSchedule extends Component {
     }
 
 
-    handleSaveSchedule = () => {
+    handleSaveSchedule = async () => {
         let { rangeTime, selectedDoctor, currentDate } = this.state
+        let result = [];
+
 
         if (!currentDate || _.isEmpty(selectedDoctor)) {
-            toast.error(`⚠  - Lưu thông tin thất bại!`)
+            toast.error(`⚠  - Lưu lịch khám thất bại!`)
         }
 
         let formatedDate = moment(currentDate).format(dateFormat.SEND_TO_SERVER)
+
+        if (rangeTime && rangeTime.length > 0) {
+            let selectedTime = rangeTime.filter(item => item.isSelected === true)
+            if (selectedTime && selectedTime.length > 0) {
+                selectedTime.map(item => {
+                    let object = {};
+                    object.doctorId = selectedDoctor.value;
+                    object.date = formatedDate;
+                    object.timeType = item.keyMap;
+                    result.push(object);
+
+                })
+
+                toast.success('Lưu lịch khám thành công!')
+
+            } else {
+                toast.error("Lưu lịch khám thất bại!")
+            }
+        }
+        
+        let res = await saveScheduleDocter({
+            arrSchedule: result
+        })
+        console.log('check resutl 2: ', res)
+
+
+        console.log('check resutl: ', result)
+
+
     }
 
 
@@ -140,6 +171,7 @@ class ManageSchedule extends Component {
 
             this.setState({
                 rangeTime: rangeTime
+
             })
         }
     }

@@ -4,6 +4,9 @@ import HomeHeader from '../../HomePage/HomeHeader';
 import { LANGUAGES } from '../../../utils'
 import './DetailDoctor.scss'
 import { getDetailInforDoctor } from '../../../services/userService'
+import { ShareSocial } from 'react-share-social'
+import Footter from '../../HomePage/Section/Footter';
+
 
 class DetailDoctor extends Component {
 
@@ -56,13 +59,18 @@ class DetailDoctor extends Component {
                             <div className='up'>
                                 {language === LANGUAGES.VI ? nameVi : nameEn}
                             </div>
-                            <div className='down'>
+                            <div className='down w-75'>
                                 {
                                     detailDoctor.Markdown && detailDoctor.Markdown.description
                                     && <span>
                                         {detailDoctor.Markdown.description}
                                     </span>
                                 }
+                            </div>
+                            <div className='social-fb'>
+
+                                <span>Like</span>
+                                <span>Share</span>
                             </div>
                         </div>
                     </div>
@@ -85,6 +93,7 @@ class DetailDoctor extends Component {
 
                     </div>
                 </div>
+                <Footter />
             </>
         );
     }

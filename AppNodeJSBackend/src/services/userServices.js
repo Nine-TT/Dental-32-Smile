@@ -1,6 +1,6 @@
 import db from '../models/index';
 import bcrypt from 'bcryptjs';
-import { promise, reject } from 'bcrypt/promises';
+
 
 const salt = bcrypt.genSaltSync(10);
 
@@ -263,6 +263,8 @@ let getAllCodeService = (typeInput) => {
     })
 }
 
+
+
 module.exports = {
     handleUserLogin: handleUserLogin,
     getAllUsers: getAllUsers,
@@ -270,4 +272,5 @@ module.exports = {
     deleteUser: deleteUser,
     updateUserData: updateUserData,
     getAllCodeService: getAllCodeService,
+    
 }

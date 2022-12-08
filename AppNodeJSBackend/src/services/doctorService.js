@@ -1,6 +1,7 @@
-import { reject } from 'bcrypt/promises';
-import e from 'express';
 import db from '../models/index';
+require('dotenv').config();
+
+const MAX_NUNBER_SCHEDULE = process.env.MAX_NUNBER_SCHEDULE;
 
 let getDoctorHome = (limitInput) => {
     return new Promise(async (resolve, reject) => {
@@ -70,11 +71,11 @@ let saveDetailInforDoctor = (inputData) => {
                     })
                 } else if (inputData.action === 'EDIT') {
                     let doctorMarkdown = await db.Markdown.findOne({
-                        where: {doctorId: inputData.doctorId},
+                        where: { doctorId: inputData.doctorId },
                         raw: false
                     })
 
-                    if (doctorMarkdown){
+                    if (doctorMarkdown) {
                         doctorMarkdown.contentHTML = inputData.contentHTML;
                         doctorMarkdown.contentMarkdown = inputData.contentMarkdown;
                         doctorMarkdown.description = inputData.description;
@@ -142,9 +143,44 @@ let getDetailDoctorById = (inputId) => {
     })
 }
 
+let createSchedule = (data) => {
+    return new Promise(async (resolve, reject) => {
+
+
+        try {
+
+            if (!data.arrSchedule) {
+                resolve({
+                    errCode: 1,
+                    errMessage: 'Missing parameter!'
+                })
+            } else {
+                let schedule = data.arrSchedule;
+                if (schedule && schedule.length > 0) {
+                    schedule = schedule.map(item => {
+                        item.maxNumber = MAX_NUNBER_SCHEDULE;
+                        return item;
+                    })
+                }
+                console.log('chech response: ', schedule);
+                await db.schedule.bulkCreate();
+
+                resolve({
+                    errCode: 0,
+                    errMessage: 'ok!'
+                })
+            }
+
+        } catch (error) {
+            reject(error)
+        }
+    })
+}
+
 module.exports = {
     getDoctorHome: getDoctorHome,
     getAllDoctors: getAllDoctors,
     saveDetailInforDoctor: saveDetailInforDoctor,
     getDetailDoctorById: getDetailDoctorById,
+    createSchedule: createSchedule,
 }
