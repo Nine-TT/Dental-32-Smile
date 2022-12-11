@@ -48,32 +48,32 @@ class Login extends Component {
         navigate(`${redirectPath}`);
     }
 
-    processLogin = () => {
-        const { username, password } = this.state;
+    // processLogin = () => {
+    //     const { username, password } = this.state;
 
-        const { adminLoginSuccess, adminLoginFail } = this.props;
-        let loginBody = {
-            username: 'admin',
-            password: '123456'
-        }
-        //sucess
-        let adminInfo = {
-            "tlid": "0",
-            "tlfullname": "Administrator",
-            "custype": "A",
-            "accessToken": "eyJhbGciOiJIU"
-        }
+    //     const { adminLoginSuccess, adminLoginFail } = this.props;
+    //     let loginBody = {
+    //         username: 'admin',
+    //         password: '123456'
+    //     }
+    //     //sucess
+    //     let adminInfo = {
+    //         "tlid": "0",
+    //         "tlfullname": "Administrator",
+    //         "custype": "A",
+    //         "accessToken": "eyJhbGciOiJIU"
+    //     }
 
-        adminLoginSuccess(adminInfo);
-        this.refresh();
-        this.redirectToSystemPage();
-        try {
-            adminService.login(loginBody)
-        } catch (e) {
-            console.log('error login : ', e)
-        }
+    //     adminLoginSuccess(adminInfo);
+    //     this.refresh();
+    //     this.redirectToSystemPage();
+    //     try {
+    //         adminService.login(loginBody)
+    //     } catch (e) {
+    //         console.log('error login : ', e)
+    //     }
 
-    }
+    // }
 
     handlerKeyDown = (event) => {
         const keyCode = event.which || event.keyCode;
@@ -97,6 +97,7 @@ class Login extends Component {
     }
 
     render() {
+       
         const { username, password, loginError } = this.state;
         const { lang } = this.props;
 

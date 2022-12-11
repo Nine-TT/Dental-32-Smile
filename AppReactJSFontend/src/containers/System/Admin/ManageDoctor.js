@@ -132,7 +132,6 @@ class ManageDoctor extends Component {
     }
 
     render() {
-        console.log('check: action: ', this.state)
         let { hasOldData } = this.state;
         return (
 
@@ -186,7 +185,7 @@ const mapStateToProps = state => {
     return {
         language: state.app.language,
         allDoctors: state.admin.allDoctors,
-        
+
     };
 };
 

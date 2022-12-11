@@ -29,8 +29,9 @@ class DetailDoctor extends Component {
                     <div className="error-container">
 
                         <div className="error">
+                            <div className='h6'>Tính năng đang rong quá trình phát triển!</div>
                             <div className="error-title">
-                                Error
+                                Error!
                             </div>
                             <div className="error-number">
                                 404
@@ -38,7 +39,7 @@ class DetailDoctor extends Component {
                             <div className="error-description">
                                 Sorry, The page you were looking for doesn't exist
                             </div>
-                            <div className="error-or">
+                            {/* <div className="error-or">
                                 <div className="or-line"></div>
                                 <div className="or">Search</div>
                             </div>
@@ -65,7 +66,7 @@ class DetailDoctor extends Component {
                                         <i className="pe-7s-mail" data-toggle="tooltip" title="" data-original-title="CONTACT US"></i>
                                     </a>
                                 </li>
-                            </ul>
+                            </ul> */}
                         </div>
                     </div>
                 </div>

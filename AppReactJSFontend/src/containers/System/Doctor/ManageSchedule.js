@@ -11,10 +11,12 @@ import moment from 'moment';
 import _ from 'lodash';
 import { toast } from 'react-toastify';
 import { saveScheduleDocter } from '../../../services/userService'
+import { USER_ROLE } from '../../../utils';
 
 
 
 class ManageSchedule extends Component {
+
 
     constructor(props) {
         super(props);
@@ -26,9 +28,12 @@ class ManageSchedule extends Component {
         })
     }
 
-    async componentDidMount() {
+    async componentDidMount(selectedDoctor) {
         this.props.fetchAllDoctors();
         this.props.fetchAllScheduleTime();
+
+
+
     }
 
     buildDataInputSelect = (inputData) => {
@@ -81,6 +86,7 @@ class ManageSchedule extends Component {
     }
 
     handleChange = async (selectedDoctor) => {
+
         this.setState({ selectedDoctor }, () =>
             console.log(`Option selected:`, this.state.selectedDoctor)
         );
@@ -106,11 +112,12 @@ class ManageSchedule extends Component {
     };
 
 
-    // handleChangeSelect = async (selectedOption) => {
-    //     this.setState({
-    //         selectedDoctor: selectedOption
-    //     })
-    // }
+
+    checkDocterLogin = () => {
+
+    }
+
+
 
     handleOnchangeDatePicker = (date) => {
         this.setState({
@@ -148,15 +155,10 @@ class ManageSchedule extends Component {
                 toast.error("Lưu lịch khám thất bại!")
             }
         }
-        
+
         let res = await saveScheduleDocter({
             arrSchedule: result
         })
-        console.log('check resutl 2: ', res)
-
-
-        console.log('check resutl: ', result)
-
 
     }
 
@@ -178,6 +180,17 @@ class ManageSchedule extends Component {
 
 
     render() {
+        let { listDoctors } = this.state.listDoctors
+        let { userInfo } = this.props
+        let role = userInfo.user.roleId;
+
+        let fullName = userInfo.user.firstName + userInfo.user.lastName
+
+
+        
+
+        console.log("login", role)
+
         let { rangeTime } = this.state
         return (
             <div className='manage-schedule-container'>
@@ -193,7 +206,6 @@ class ManageSchedule extends Component {
                                 value={this.state.selectedDoctor}
                                 onChange={this.handleChange}
                                 options={this.state.listDoctors}
-
                             />
                         </div>
 
@@ -241,6 +253,7 @@ class ManageSchedule extends Component {
 
 const mapStateToProps = state => {
     return {
+        userInfo: state.user.userInfo,
         isLoggedIn: state.user.isLoggedIn,
         language: state.app.language,
         allDoctors: state.admin.allDoctors,

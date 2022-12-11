@@ -20,10 +20,10 @@
     "menu": {
         "admin": {
             "manage-user" : "người dùng",
-            "manage-doctor" : "Quản lý bác sĩ",
+            "manage-doctor" : "Quản lý thông tin bác sĩ",
             "manage-admin" : "Quản lý Admin",
             "crud" : "CRUD user",
-            "crud-redux": "Redux user",
+            "crud-redux": "Quản lý tài khoản",
             "clinic": "Phòng khám",
             "manage-clinic" : "Quản lý phòng khám",
             "specialty": "Dịch vụ",
