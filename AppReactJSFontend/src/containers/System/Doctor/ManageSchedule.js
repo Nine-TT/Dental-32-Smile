@@ -187,16 +187,16 @@ class ManageSchedule extends Component {
         let fullName = userInfo.user.firstName + userInfo.user.lastName
 
 
-        
+
 
         console.log("login", role)
 
         let { rangeTime } = this.state
         return (
             <div className='manage-schedule-container'>
-                <div className='title-manage'>
+                {/* <div className='title-manage'>
                     <FormattedMessage id="manage-schedule.title" />
-                </div>
+                </div> */}
 
                 <div className='container mt-5'>
                     <div className='row'>

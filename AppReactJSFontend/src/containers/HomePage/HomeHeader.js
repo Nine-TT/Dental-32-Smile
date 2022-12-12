@@ -59,33 +59,10 @@ class HomeHeader extends Component {
                         </div>
 
                         <div className='center-content'>
-                            <div className='child-content'>
-                                <div onClick={() => this.Page404()} className="click-poiter">
-                                    <b><FormattedMessage id={"homeheader.Facilities"} /></b>
-                                </div>
-                                {/* <div>
-                                    <FormattedMessage id={"homeheader.Choose-a-clinic"} />
-                                </div> */}
-                            </div>
 
-                            <div className='child-content'>
-                                <div className="click-poiter" onClick={() => this.Page404()}>
-                                    <b><FormattedMessage id={"homeheader.Dentist"} /></b>
-                                </div>
-                                {/* <div>
-                                    <FormattedMessage id={"homeheader.Choose-your-desired-dentist"} />
-                                </div> */}
-                            </div>
-
-                            <div className='child-content'>
-                                <div className="click-poiter" onClick={() => this.Page404()}>
-                                    <b><FormattedMessage id={"homeheader.Checkup-package"} /></b>
-                                </div>
-                                {/* <div>
-                                    <FormattedMessage id={"homeheader.Package-offer"} />
-                                </div> */}
-                            </div>
                         </div>
+
+
 
                         <div className='right-content'>
                             <div className='search'>
@@ -131,7 +108,7 @@ class HomeHeader extends Component {
                                     <div className='option-title'><FormattedMessage id={"homeheader.Children's-teeth"} /></div>
                                 </div>
 
-                                <div className='option_1'>
+                                <div className='option_1' onClick={() => this.Page404()}>
                                     <div className='option-icon'>
                                         <i className="fas fa-user-md"></i>
                                     </div>

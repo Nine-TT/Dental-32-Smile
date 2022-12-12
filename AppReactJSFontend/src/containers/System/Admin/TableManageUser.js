@@ -55,7 +55,7 @@ class TableManageUser extends Component {
         let arrUsers = this.state.userRedux;
 
         return (
-            <div>
+            <div className='rounded-2'>
                 <table id="customers" className='container '>
                     <tbody>
                         <tr>

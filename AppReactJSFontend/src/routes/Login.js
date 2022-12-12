@@ -44,7 +44,7 @@ class Login extends Component {
 
     redirectToSystemPage = () => {
         const { navigate } = this.props;
-        const redirectPath = '/system/user-manage';
+        const redirectPath = '/system/manage-schedule';
         navigate(`${redirectPath}`);
     }
 
@@ -97,7 +97,7 @@ class Login extends Component {
     }
 
     render() {
-       
+
         const { username, password, loginError } = this.state;
         const { lang } = this.props;
 
