@@ -2,6 +2,7 @@ import express, { Router } from "express";
 import homecontroller from "../controllers/homeController";
 import usercontroller from "../controllers/userController";
 import doctorController from "../controllers/doctorController";
+import clinicController from '../controllers/clinicController';
 
 let router = express.Router();
 
@@ -28,6 +29,11 @@ let initWebRouter = (app) => {
     router.get('/api/get-detail-doctor-by-id', doctorController.getDetailDoctorById);
     router.post('/api/create-schedule', doctorController.createSchedule)
 
+    // clinic
+    router.post('/api/create-new-clinic', clinicController.createNewClinic);
+    router.delete('/api/delete-clinic', clinicController.deleteClinic);
+    router.put('/api/edit-clinic', clinicController.handleEditClinic);
+    router.get('/api/get-clinic-by-id', clinicController.handleGetClinic);
 
     return app.use("/", router);
 }

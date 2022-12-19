@@ -22,6 +22,10 @@ module.exports = {
         type: Sequelize.TEXT
       },
 
+      phoneNumber: {
+        type: Sequelize.STRING
+      },
+
       image: {
         type: Sequelize.STRING
       },
